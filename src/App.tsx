@@ -2,21 +2,22 @@ import { ChakraProvider, useDisclosure } from "@chakra-ui/react";
 import theme from "./theme";
 import Layout from "./components/Layout";
 import ConnectButton from "./components/ConnectButton";
-import AccountModal from "./components/AccountModal";
 import "@fontsource/inter";
 import Web3 from 'web3';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Jazzicon from "@metamask/jazzicon";
+import styled from "@emotion/styled";
+import { BigNumber, utils } from 'ethers'
+
 
 declare let window: any;
-
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <ChakraProvider theme={theme}>
       <Layout>
-        <ConnectButton handleOpenModal={onOpen} />
-        <AccountModal isOpen={isOpen} onClose={onClose} />
+        <ConnectButton isOpen={isOpen} onClose={onClose} handleOpenModal={onOpen} />
       </Layout>
     </ChakraProvider>
   );
@@ -24,7 +25,13 @@ function App() {
 
 export default App;
 
-export async function getConnector() {
+const StyledIdenticon = styled.div`
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1.125rem;
+  background-color: black;
+`;
+export async function getProvider() {
     const web3:any = new Web3(window.ethereum)
     await window.ethereum.enable();
     let _address = web3.utils.toChecksumAddress((await web3.eth.getAccounts())[0]);
@@ -41,5 +48,12 @@ export async function getConnector() {
       'networkId':_networkId,
       'weiBalance':_wei,
       'etherBalance':_eth,
+      'jazzicon':<div ref={(nodeElement) => {
+                      if (nodeElement) {
+                        nodeElement.innerHTML = ''
+                        nodeElement.appendChild(Jazzicon(16, parseInt(_address.slice(2, 10), 16)))
+                      }
+                    }}
+                  ></div>
     }
 }
