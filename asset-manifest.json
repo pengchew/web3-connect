@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/web3-connect/static/js/main.fdffc9d8.chunk.js",
+    "main.js.map": "/web3-connect/static/js/main.fdffc9d8.chunk.js.map",
+    "runtime-main.js": "/web3-connect/static/js/runtime-main.32a6c99e.js",
+    "runtime-main.js.map": "/web3-connect/static/js/runtime-main.32a6c99e.js.map",
+    "static/css/2.505c2c2e.chunk.css": "/web3-connect/static/css/2.505c2c2e.chunk.css",
+    "static/js/2.0b0796ba.chunk.js": "/web3-connect/static/js/2.0b0796ba.chunk.js",
+    "static/js/2.0b0796ba.chunk.js.map": "/web3-connect/static/js/2.0b0796ba.chunk.js.map",
+    "index.html": "/web3-connect/index.html",
+    "static/css/2.505c2c2e.chunk.css.map": "/web3-connect/static/css/2.505c2c2e.chunk.css.map",
+    "static/js/2.0b0796ba.chunk.js.LICENSE.txt": "/web3-connect/static/js/2.0b0796ba.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/web3-connect/static/media/inter-vietnamese-400-normal.bc4d5149.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32a6c99e.js",
+    "static/css/2.505c2c2e.chunk.css",
+    "static/js/2.0b0796ba.chunk.js",
+    "static/js/main.fdffc9d8.chunk.js"
+  ]
+}
